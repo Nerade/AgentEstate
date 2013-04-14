@@ -1,0 +1,21 @@
+    name: AgentEstate
+    author: Nerade
+    main: de.celestialcraft.AgentEstate.AgentEstate
+    version: 2.1alpha
+    description: >
+               Your ingame agent for Estates!
+    
+    commands:
+        gs:
+            description: Grundbefehle
+            aliases: [agentestate]
+            usage: >
+               "/<command> create <region_id> <preis> // Erstellt einen neuen Makler (ADMIN)"
+               "/<command> repair <region_id> <owner> // Ersetzt ein zerstoertes Schild (ADMIN)"
+               "/<command> clear // Ueberprueft und reinigt Datenbank(ADMIN)"
+               "/<command> multimode <preis> // Aktiviert den Multimode(ADMIN)"
+               "/<command> sell <preis> // Setzt dein Grundstueck zum Verkauf"
+               "/<command> start // Bringt dich zu einem freien Grundstueck"
+               "/<command> restart // Resettet die interne Liste an freien Grundstuecken"
+               "/<command> list <region> <owner> <seller> <preis> // Suche in der Datenbank" 
+            
