@@ -6,6 +6,16 @@
   <name>AgentEstate</name>
   <build>
     <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <targetPath>.</targetPath>
+        <filtering>true</filtering>
+        <directory>src/resources</directory>
+        <includes>
+          <include>plugin.yml</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -22,6 +32,14 @@
  		 <id>bukkit-repo</id>
  		 <url>http://repo.bukkit.org/content/groups/public/</url>
 	  </repository>
+	   <repository>
+ 		 <id>sk89q-repo</id>
+ 		 <url>http://maven.sk89q.com/repo/</url>
+	  </repository>
+	  <repository>
+ 		 <id>mvn-repo</id>
+ 		 <url>https://github.com/Nerade/mvn-repo</url>
+	  </repository>
   </repositories>
   <dependencies>
   	<dependency>
@@ -29,5 +47,27 @@
   		<artifactId>bukkit</artifactId>
   		<version>1.4.7-R1.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.sk89q</groupId>
+  		<artifactId>worldedit</artifactId>
+  		<version>5.5.6-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.sk89q</groupId>
+  		<artifactId>worldguard</artifactId>
+  		<version>5.7.4-SNAPSHOT</version>
+  	</dependency>
+	<dependency>
+ 	  	 <groupId>com.nijikokun</groupId>
+ 		 <artifactId>iConomy</artifactId>
+ 		 <version>6.0.0</version>
+ 		 <scope>system</scope>
+  		 <systemPath>${basedir}/../Resources/iConomy.jar</systemPath>
+	</dependency>
+	<dependency>
+		<groupId>ru.tehkode</groupId>
+		<artifactId>PermissionsEx</artifactId>
+		<version>1.19.5</version>
+	</dependency>
   </dependencies>
 </project>
