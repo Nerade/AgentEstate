@@ -468,7 +468,7 @@ public class Estate { // Klasse, die ein Grundstück repräsentiert
 	}
 	
 	private boolean saveState() {
-
+		File path = new File(plugin.getDataFolder()+ File.separator + "schematics" + File.separator);
 		ProtectedRegion region = plugin.worldguard.getRegionManager(
 				plugin.getServer().getWorld(this.getWorld())).getRegion(
 				this.getRegionId());
@@ -478,7 +478,7 @@ public class Estate { // Klasse, die ein Grundstück repräsentiert
 		
         CuboidClipboard cubo = new CuboidClipboard(
                 max.subtract(min).add(new Vector(1, 1, 1)),
-                min);
+                min, new Vector(0,0,0));
 
 		SchematicFormat format;
 		if (SchematicFormat.getFormats().size() == 1) {
@@ -488,9 +488,12 @@ public class Estate { // Klasse, die ein Grundstück repräsentiert
 					.println("More than one schematic format is available. Please provide the desired format");
 			return false;
 		}
-		File sch = new File(plugin.getDataFolder()+ File.separator + "schematics" + File.separator + this.getRegionId() + ".sch");
+		
+		if(!path.exists()){
+			path.mkdir();
+		}
+		File sch = new File(path.getAbsolutePath() + File.separator + this.getRegionId() + ".sch");
 		System.out.println(sch);
-		System.out.println(cubo);
 		try {
 			format.save(cubo, sch);
 		} catch (IOException e) {
